@@ -1,0 +1,599 @@
+
+/*
+
+    #####################
+    ### MISC. CLASSES ###
+    #####################
+
+*/
+
+
+.center-content-vertically {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.center-content-horizontally {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.invisible-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.invisible-scroller {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.horizontal-scroller {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+/* width */
+.horizontal-scroller::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.horizontal-scroller::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 0 32px;
+}
+
+/* Handle */
+.horizontal-scroller::-webkit-scrollbar-thumb {
+  background: #8888;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.horizontal-scroller::-webkit-scrollbar-thumb:hover {
+  background: #5558;
+}
+
+.horizontal-scroller::-webkit-scrollbar-button {
+  background: transparent;
+  width: 0;
+  height: 0;
+}
+
+.horizontal-scroller::-webkit-scrollbar-corner {
+  background: transparent;
+  width: 0;
+  height: 0;
+}
+
+
+/*
+
+    #######################
+    ### BODY PROPERTIES ###
+    #######################
+
+*/
+
+
+body {    
+    margin: 0px;
+    padding: 0px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/*
+
+    ######################
+    ### NAVIGATION BAR ###
+    ######################
+
+*/
+
+.page-logo {
+  position: absolute;
+  
+  width: 48px;
+  height: 48px;
+  
+  padding: 8px;
+}
+
+nav.desktop {
+    clear: both;
+
+    background-color: #ffffff;
+    /* border-bottom: 4px solid #5face3; */
+
+    width: 100vw;
+    height: 64px;
+
+    z-index: 100;
+    position: fixed;
+  
+  box-shadow: 0 0 32px #0008;
+}
+
+nav.desktop .page {
+    cursor: pointer;
+
+    float: left;
+    text-align: center;
+    padding: 16px 16px 16px 16px;
+
+    text-decoration: none;
+
+    color: #5face3;
+
+    font-family: "Raleway";
+    font-size: 24px;
+    font-weight: 200;
+
+    line-height: 32px;
+}
+
+#navigation-bar-pages {
+    width: 100vw;
+    height: 56px;
+    background-color: black;
+}
+
+nav.desktop .page:hover {
+    background-color: #5face3;
+    color: #ffffff;
+}
+
+.side-bar.mobile {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-top: 128px;
+  width: min(100vw, 320px);
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  
+  background-color: #fff;
+  box-shadow: 0 0 32px #0002;
+}
+
+.side-bar.mobile .page {
+  margin: 0;
+  padding-left: 16px;
+  height: 64px;
+  width: 100%;
+  line-height: 64px;
+
+  text-decoration: none;
+
+  color: #5face3;
+
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 200;
+  
+  cursor: pointer;
+}
+
+.side-bar.mobile .page:hover {
+  background-color: #5face3;
+  color: #ffffff;
+}
+
+nav.mobile {
+  position: fixed;
+  
+  left: 0;
+  top: 0;
+  
+  width: 100vw;
+  height: 64px;
+  
+  background-color: #fff;
+  box-shadow: 0 0 32px #0002;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+.open-menu.mobile {
+  position: fixed;
+  
+  top: 0;
+  right: 0;
+  
+  padding: 16px;
+  width: 32px;
+  height: 32px;
+  
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  
+  cursor: pointer;
+  
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+nav.desktop {
+  display: none;
+}
+
+/*
+
+    ##############
+    ### PAGE 1 ###
+    ##############
+
+*/
+
+#page1 {
+    clear: both;
+
+    /* FALLBACK */
+    background-color: #ffffff;
+
+    /* APPEARANCE */
+    background-image: url("https://cdn.glitch.com/1be904cd-cddd-4eb1-bfda-73d1f6f71369%2Fsky.jpg?v=1603041913337");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* SIZE AND POSITION */
+    height: calc(100vh - 64px);
+    
+    padding: 64px 0px 0px 0px;
+}
+
+/* ### CLASSES FOR SPLIT-SCREEN LAYOUT ### */
+
+.one-third-panel {
+    height: calc(100vh - 64px);
+    width: 47vw;
+    top: 0px;
+}
+
+.panel-left {
+    left:0;
+    float: left;
+    padding-right: 3vw;
+}
+
+.panel-right {
+    right: 0;
+    float: right;
+    padding-left: 3vw;
+}
+
+@media only screen and (max-width: 1280px) {
+  .one-third-panel {
+    width: 100vw;
+    height: calc(47vh - 64px);
+    top: 0px;
+  }
+
+  .panel-left {
+      top:0;
+      float: left;
+      padding-bottom: 3vw;
+  }
+
+  .panel-right {
+      bottom: 0;
+      float: right;
+      padding-top: 3vw;
+  }
+}
+
+/* ### LEFT SIDE PANEL ### */
+
+#page1-left-panel {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#page1-title h1 {
+    color: #5face3;
+    font-family: 'Fredoka One', cursiv;
+    font-size: min(150px, 20vw);
+    font-weight: 200;
+    line-height: 10%;
+    letter-spacing: 20px;
+
+    text-align: left;
+    vertical-align: bottom;
+}
+
+#page1-title h2 {
+    color: #5683a3;
+
+    font-family: 'Indie Flower', cursive;
+    font-weight: 100;
+    font-size: min(28px, 4vw);
+    line-height: 10%;
+    
+    letter-spacing: 1.5px;
+
+    text-align: left;
+    vertical-align: top;
+}
+
+/* ### RIGHT SIDE PANEL ### */
+
+#page1-right-panel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#page1-right-panel p {
+    color: black;
+    font-family: 'Indie Flower', cursive;
+    font-size: min(32px, 4vw);
+    font-weight: 100;
+    line-height: 75%;
+}
+
+@media only screen and (max-width: 1280px) {
+  #page1-left-panel {
+      justify-content: center;
+      align-items: flex-end;
+  }
+
+  #page1-right-panel {
+      justify-content: center;
+  }
+}
+
+/*
+
+    ##############
+    ### PAGE 2 ###
+    ##############
+
+*/
+
+#page2 {
+    clear: both;
+
+    /* FALLBACK */
+    background-color: #f8f8f8;
+
+    /* APPEARANCE */
+    background-image: url("https://cdn.glitch.com/1be904cd-cddd-4eb1-bfda-73d1f6f71369%2Fwallpaperflare.com_wallpaper.jpg?v=1603041707420");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    /* SIZE & POSITION */
+    height: calc(100vh - 64px);
+}
+
+#page2 hr {
+    /* APPEARANCE */
+    border-color: rgba(0, 0, 0, 0.05);
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    /* SIZE & POSITION */
+    width: calc(50vw - 128px);
+}
+
+
+/*
+
+    ### page2 #################
+    ### DESCRIPTION SECTION ###
+    ###########################
+
+*/
+
+#description {
+    /* APPEARANCE */
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: min(24px, 2vh);
+    
+    text-align: center;
+
+
+    /* SIZE & POSITION */
+    width: 75%;
+    height: calc((100vh - 64px) / 3);
+
+    margin: 0px auto;
+
+    /* CONTENT ALIGNMENT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#description p {
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+}
+
+
+
+
+/*
+
+    ### page2 ################
+    ### COMPARISON SECTION ###
+    ##########################
+
+*/
+
+#comparison {
+
+    /* APPEARANCE */
+
+    font-family: 'Oxygen', sans-serif;
+    font-size: min(18px, 3vw);
+    letter-spacing: 2px;
+    
+    /* POSITION & SIZE */
+    
+    width: fit-content;
+    height: calc((100vh - 64px) / 3);
+
+    margin: 0px auto;
+
+    /* CONTENT ALIGNMENT */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#comparison th, td {
+    padding: 6px 16px;
+}
+
+#comparison .product, .value {
+    width: 128px;
+}
+
+#comparison .category {
+    text-align: right;
+}
+
+#comparison .value {
+    text-align: center;
+}
+
+#comparison .product {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+  
+    height: 24px;
+}
+
+#comparison .our-product {
+    color: #5face3;
+    font-family: 'Fredoka One', cursive;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 10%;
+    letter-spacing: 3px;
+}
+
+#our-product-table {
+    background-color: #aaaaaa33;
+}
+
+
+@media only screen and (max-width: 1080px) {
+  #comparison {
+    width: max-content;
+  }
+  
+  .horizontal-scroller {
+    overflow: scroll;
+  }
+}
+
+/*
+
+    ### page2 #############
+    ### GET NOW SECTION ###
+    #######################
+
+*/
+
+#page2-get-now {
+    /* SIZE & POSITION */
+    height: calc((100vh - 64px) / 3);
+
+    margin: auto 0px;
+
+    /* CONTENT ALIGNMENT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ### "GET NOW" BUTTON ### */
+
+#get-now-button:hover { background-color: black; }
+#get-now-button {
+    cursor: pointer;
+
+    /* APPEARANCE */
+    background-color: transparent;
+
+    border-style: solid;
+    border-color: black;
+    border-width: 2.5px;
+    border-radius: 0px;
+
+    box-shadow: none;
+    
+    /* POSITION & SIZE */    
+    width: 256px;
+    height: fit-content;
+    
+    margin: 8px auto 0px auto;
+}
+
+#get-now-button:hover p { color: white; }
+#get-now-button p {
+    
+    /* TEXT STYLE */
+    color: black;
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    
+    text-align: center;
+    text-shadow: none;
+
+    /* SIZE AND POSITION */
+    margin: 0px;
+    padding: 12px 0px;
+}
+
+
+/* ### "SUPPORTED ON" TEXT & ICONS ### */
+
+#get-now .supported-on {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+#icons {
+    width: fit-content;
+    margin: 24px auto;
+    
+    display: table;
+}
+
+#icons .icon {
+    width: 32px;
+    margin: 0px 16px;
+}
